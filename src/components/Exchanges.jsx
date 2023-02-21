@@ -1,6 +1,6 @@
 import React from 'react';
 import millify from 'millify';
-import { Collapse, Row, Col, Typography, Avatar, Select, Space } from 'antd';
+import { Collapse, Row, Col, Typography, Avatar, Select } from 'antd';
 import { useSearchParams } from 'react-router-dom';
 import { useGetExchangesQuery } from '../services/cryptoApi';
 import { useGetCryptosQuery } from '../services/cryptoApi';
