@@ -25,10 +25,10 @@ const Exchanges = () => {
 
     <>
     <Col span={24} align='center'>
-      <Select style={{width: '200px'}} placeholder='Select a CryptoCurrency' onChange={(value) => {
-    setSearch({coinId: value}); 
+      <Select style={{width: '200px'}} placeholder='Select a CryptoCurrency' onChange={(key) => {
+    setSearch({coinId: key}); 
      }}>
-        {cryptoList?.data?.coins.map((coin) => <Option value={coin.uuid} key={coin.uuid}>{coin.name}</Option>)}
+        {cryptoList?.data?.coins.map((coin) => <Option value={coin.key} key={coin.uuid}>{coin.name}</Option>)}
       </Select>
     </Col>
     <Title level={2} align='center' style={{margin: '15px', fontWeight: 'bold', color: 'var(--green)'}}>
@@ -41,7 +41,7 @@ const Exchanges = () => {
         <Col style={{fontSize: '17px', fontWeight: 'bold'}} span={6}>Change</Col>
       </Row>
       <Row style={{marginTop: '15px', padding: '1px'}}>
-        {exchangesList.map((exchange) => (
+        {exchangesList?.map((exchange) => (
           <Col span={24}>
               <Panel
                 key={exchange.uuid}
@@ -55,7 +55,7 @@ const Exchanges = () => {
                     </Col>
                     <Col span={6}>${millify(exchange['24hVolume'])}</Col>
                     <Col span={6}>{millify(exchange.numberOfMarkets)}</Col>
-                    <Col span={6}>{millify(exchange.price)}%</Col>
+                    <Col span={6}>${millify(exchange.price)}</Col>
                   </Row>
                   )}
               >
